@@ -1,6 +1,15 @@
-const base = require('airtable').base('appbpIvf5JUe2PCdH')
+require('dotenv').config()
+
+var Airtable = require('airtable')
+Airtable.configure({
+  endpointUrl: 'https://api.airtable.com',
+  apiKey: process.env.AIRTABLE_API_KEY,
+})
+var base = Airtable.base('appbpIvf5JUe2PCdH')
+
 const express = require('express')
 const path = require('path')
+
 
 
 const app = express()
